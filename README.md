@@ -1,5 +1,6 @@
 # Contrast changer
-This is a javascript program to help those with low vision to find the contrast at which they can't see clearly  
+This is a javascript program to help those with low vision to find the contrast at which they can't see clearly 
+RGB value is printed to console
 
-# //TODO
-Algorithm need to be optimises
+ //TODO
+Enter key should trigger enter button
