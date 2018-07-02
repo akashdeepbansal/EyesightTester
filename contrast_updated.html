@@ -60,7 +60,7 @@
 
 <p id="inp">
     <span></span>
-    <input id="myInput" class="depth"/>
+    <input id="myInput"  class="depth" onkeypress="return searchKeyPress(event);"/>
 
     <span></span>
 </p>
@@ -71,6 +71,25 @@
 
 
 <script>
+
+function searchKeyPress(e)
+{
+    // look for window.event in case event isn't passed in
+    e = e || window.event;
+    if (e.keyCode == 13)
+    {
+        document.getElementById('myBtn').click();
+        return false;
+    }
+    return true;
+}
+
+    function SetFocus () {
+var inpu = document.getElementById ("myInput");
+inpu.focus ();
+
+}
+
     function RandNumber() {
          
         return document.getElementById("DisplayNumber").innerHTML = Math.floor(10 * Math.random());;
@@ -80,6 +99,7 @@
 
 
     function main() {
+        SetFocus();
          rand=RandNumber();
        // console.log(rand);
 
@@ -125,6 +145,8 @@
    
 
 </script>
+
+<script type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
