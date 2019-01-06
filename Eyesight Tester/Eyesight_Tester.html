@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Eye-Tester Module-2</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Akashdeep Bansal && Anshul Yadav && BB"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="1530" height="848" >
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+'use strict'
+// var s="abc";
+// var d=getAllPermutations(s);
+// console.log(d[ Math.floor(6*Math.random())]);
+function permute(permutation) {
+  var length = permutation.length,
+      result = [permutation.slice()],
+      c = new Array(length).fill(0),
+      i = 1, k, p;
+  while (i < length) {
+    if (c[i] < i) {
+      k = i % 2 && c[i];
+      p = permutation[i];
+      permutation[i] = permutation[k];
+      permutation[k] = p;
+      ++c[i];
+      i = 1;
+      result.push(permutation.slice());
+    } else {
+      c[i] = 0;
+      ++i;
+    }
+  }
+  return result;
+}
+var d1=permute([1, 2, 3 ,4, 5, 6, 7, 8 , 9 , 10]);
+// [Math.floor(9*Math.random())]
+// console.log(d1[Math.floor(362799*Math.random())]);
+var d0=d1[Math.floor(362799*Math.random())];
+// console.log(d0);
+var d2=d1[Math.floor(362799*Math.random())];
+for (var i = 0; i < 10; ++i) {
+   d2[i]+=10;
+}
+// console.log(d2);
+var d3=d1[Math.floor(362799*Math.random())];
+for (var i = 0; i < 10; ++i) {
+   d3[i]=d3[i]+20;
+}
+// console.log(d3);
+var d4=d1[Math.floor(362799*Math.random())];
+for (var i = 0; i < 10; ++i) {
+   d4[i]=d4[i]+30;
+}
+// console.log(d4);
+var d5=d1[Math.floor(362799*Math.random())];
+for (var i = 0; i < 10; ++i) {
+   d5[i]=d5[i]+40;
+}
+// console.log(d5);
+var d6=d1[Math.floor(362799*Math.random())];
+for (var i = 0; i < 10; ++i) {
+   d6[i]=d6[i]+50;
+}
+// console.log(d6);
+var e1=[];
+var e2=[];
+var e3=[];
+var e4=[];
+var e5=[];
+var e6=[];
+var e7=[];
+var e8=[];
+var e9=[];
+var e10=[];
+e1[0]=d0[0];
+e1[1]=d2[0];
+e1[2]=d3[0];
+e1[3]=d4[0];
+e1[4]=d5[0];
+e1[5]=d6[0];
+// console.log(e1);
+e2[0]=d0[1];
+e2[1]=d2[1];
+e2[2]=d3[1];
+e2[3]=d4[1];
+e2[4]=d5[1];
+e2[5]=d6[1];
+// console.log(e2);
+e3[0]=d0[2];
+e3[1]=d2[2];
+e3[2]=d3[2];
+e3[3]=d4[2];
+e3[4]=d5[2];
+e3[5]=d6[2];
+// console.log(e3);
+e4[0]=d0[3];
+e4[1]=d2[3];
+e4[2]=d3[3];
+e4[3]=d4[3];
+e4[4]=d5[3];
+e4[5]=d6[3];
+// console.log(e4);
+e5[0]=d0[4];
+e5[1]=d2[4];
+e5[2]=d3[4];
+e5[3]=d4[4];
+e5[4]=d5[4];
+e5[5]=d6[4];
+// console.log(e5);
+e6[0]=d0[5];
+e6[1]=d2[5];
+e6[2]=d3[5];
+e6[3]=d4[5];
+e6[4]=d5[5];
+e6[5]=d6[5];
+// console.log(e6);
+e7[0]=d0[6];
+e7[1]=d2[6];
+e7[2]=d3[6];
+e7[3]=d4[6];
+e7[4]=d5[6];
+e7[5]=d6[6];
+// console.log(e7);
+e8[0]=d0[7];
+e8[1]=d2[7];
+e8[2]=d3[7];
+e8[3]=d4[7];
+e8[4]=d5[7];
+e8[5]=d6[7];
+// console.log(e8);
+e9[0]=d0[8];
+e9[1]=d2[8];
+e9[2]=d3[8];
+e9[3]=d4[8];
+e9[4]=d5[8];
+e9[5]=d6[8];
+// console.log(e9);
+e10[0]=d0[9];
+e10[1]=d2[9];
+e10[2]=d3[9];
+e10[3]=d4[9];
+e10[4]=d5[9];
+e10[5]=d6[9];
+// console.log(e10);
+var mat = e1.concat(e2,e3,e4,e5,e6,e7,e8,e9,e10);
+// console.log(mat);
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.rect(80, 80, 150, 100);
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, c.width, c.height);
+// function myFunction(){
+// ++i;
+// }
+var posx = 0;
+var posy = 0;
+var heck=0;
+// for (var i = 0; i < 60; ++i) {
+//  posx=((mat[i]-1)%10)*100+50;
+//  heck=Math.floor((mat[i]-1)/10);
+//  posy=heck*100+50;
+//  console.log("posx=",posx,"posy=",posy)
+  
+//  setTimeout(function(){ draw(posx,posy); }, 3000);
+// }
+var i=0;
+ var globalArray=[];
+ globalArray[0]=[];
+ globalArray[1]=[];
+var varCounter = 0;
+var mx; var my;
+  
+var arr=[];
+var intervalId =setInterval(function(){ 
+  posx=688.5+((mat[i]-1)%10)*15.3+15.3;
+  heck=Math.floor((mat[i]-1)/10);
+  posy=353.33+heck*23.55+23.555;
+  // console.log(mat[i]);
+  draw(posx,posy);
+  document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        arr.push(mat[i]);
+    }
+}
+// console.log(arr);
+  i++;
+  stopEx(); 
+}, 2000);
+
+function stopEx(){
+     if(varCounter >= 60) {
+           clearInterval(intervalId);
+
+           arr.sort(function(a, b){return a-b});
+           console.log("Centre array is ",arr);
+           
+           var arrOldSplit=arrOld.split(",").map(Number);
+           // var finalArray=arr.concat(arrOldSplit);
+           
+            console.log("Complete array is",arrOldSplit);
+             // console.log(finalArray);
+           var url="second.html?arr=" + arrOldSplit+"*"+arr; 
+           window.location.href =url;
+
+     } else {
+         varCounter++;
+         // console.log("counter"+varCounter);
+     }
+
+}
+
+function draw(posx,posy) {
+  ctx.fillStyle = randomColor();
+  ctx.beginPath();
+  ctx.arc(posx, posy, 10, 0, 2 * Math.PI);
+  ctx.fill();
+  ctx.fillStyle = "white";
+  ctx.beginPath();
+  ctx.arc(765,424 , 10, 0, 2 * Math.PI);
+  ctx.fill();
+     setTimeout(clearFunction, 1500);
+}
+
+
+function randomColor() {
+  /*For randomColored dots
+  var color = [];
+  for (var i = 0; i < 3; ++i) {
+    color.push(Math.floor(Math.random() * 256));
+  }
+  return 'rgb(' + color.join(',') + ')';*/
+  // For yello dots
+  var v=255; var z=0;
+  return 'rgb( ' + v + ',' + v + ',' + z + ')';
+}
+function clearFunction(){
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, c.width, c.height);
+ctx.fillStyle = "white";
+  ctx.beginPath();
+  ctx.arc(765, 424, 10, 0, 2 * Math.PI);
+  ctx.fill();
+ctx.clearRect(0, 0, c.width, c.height);
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, c.width, c.height);
+ctx.fillStyle = "white";
+  ctx.beginPath();
+  ctx.arc(765,424 , 10, 0, 2 * Math.PI);
+  ctx.fill();
+}
+
+</script> 
+<script type="text/javascript">
+
+  var arrOld;
+
+  function getAllUrlParams(url) {
+
+  // get query string from url (optional) or window
+  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+
+  // we'll store the parameters here
+  var obj = {};
+
+  // if query string exists
+  if (queryString) {
+
+    // stuff after # is not part of query string, so get rid of it
+    queryString = queryString.split('#')[0];
+
+    // split our query string into its component parts
+    var arr = queryString.split('&');
+
+    for (var i = 0; i < arr.length; i++) {
+      // separate the keys and the values
+      var a = arr[i].split('=');
+
+      // set parameter name and value (use 'true' if empty)
+      var paramName = a[0];
+      var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
+
+      // (optional) keep case consistent
+      paramName = paramName.toLowerCase();
+      if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+
+      // if the paramName ends with square brackets, e.g. colors[] or colors[2]
+      if (paramName.match(/\[(\d+)?\]$/)) {
+
+        // create key if it doesn't exist
+        var key = paramName.replace(/\[(\d+)?\]/, '');
+        if (!obj[key]) obj[key] = [];
+
+        // if it's an indexed array e.g. colors[2]
+        if (paramName.match(/\[\d+\]$/)) {
+          // get the index value and add the entry at the appropriate position
+          var index = /\[(\d+)\]/.exec(paramName)[1];
+          obj[key][index] = paramValue;
+        } else {
+          // otherwise add the value to the end of the array
+          obj[key].push(paramValue);
+        }
+      } else {
+        // we're dealing with a string
+        if (!obj[paramName]) {
+          // if it doesn't exist, create property
+          obj[paramName] = paramValue;
+        } else if (obj[paramName] && typeof obj[paramName] === 'string'){
+          // if property does exist and it's a string, convert it to an array
+          obj[paramName] = [obj[paramName]];
+          obj[paramName].push(paramValue);
+        } else {
+          // otherwise add the property
+          obj[paramName].push(paramValue);
+        }
+      }
+    }
+  }
+
+  return obj;
+}
+  arrOld= getAllUrlParams().arr;
+ 
+ 
+</script>
+</body>
+</html>
